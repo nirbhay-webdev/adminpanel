@@ -1,0 +1,28 @@
+<script>$('ul.nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});</script>
+
+<table class="row">
+    </tbody>
+    
+    <tr><td class="col-lg-3"></td>
+        <td class="col-lg-1" ng-repeat="x in [7,8,9,10,11,12]">{{x}}</td></tr>
+    <tr><td class="col-lg-3"></td>
+        <td class="col-lg-1" ng-repeat="x in [7,8,9,10,11,12]"><div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div></td>
+    </tr>  
+
+    </tbody>
+</table>    

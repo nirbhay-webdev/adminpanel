@@ -1,0 +1,28 @@
+
+<div class="container-fluid" ng-controller="dashboardController" ng-init="init()">
+    <div class="row">
+        <div class="col-lg-3"><h3>NOL Admin</h3></div>
+        <div class="col-lg-6"></div>
+        <div class="col-lg-3"><button type="button" class="btn btn-link" ng-click="logout()">Sign Out</div>
+    </div>
+    
+    
+    <div class="row" role="navigation">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a ng-href="" aria-controls="home" role="tab" data-toggle="tab" ng-click="tab='dashboard'">Dashboard</a></li>
+            <li role="presentation"><a ng-href="" aria-controls="profile" role="tab" data-toggle="tab" ng-click="tab='live-data'">Live Data</a></li>
+           
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+        </ul>
+
+    </div>
+    <div ng-include="'app-templates/partials/dashboard-partial.html'" ng-show="tab == 'dashboard'"></div>
+    <div ng-include="'app-templates/partials/live-data-partial.html'" ng-show="tab == 'live-data'"></div>
+    
+
+
+
+
+
+</div>

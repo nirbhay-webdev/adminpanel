@@ -1,0 +1,53 @@
+
+<div class="container" ng-controller="MainController" ng-init="init()">
+
+    <div class="row">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div clss="col-lg-6">
+            Venue:{{ dataObject.venue }}
+            Date:{{ dataObject.date }}
+        </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-3"></div>
+          
+          <div class="col-lg-1 charting" ng-repeat="dataPoint in dataObject.data">
+              <div class="row">
+                    <div class="section col-lg-6">
+                         <div class="no-of-people"  style="width:10px;height:{{dataPoint.people}}px;background:blue;position:absolute;float:left;margin-left:5px;bottom:0px;border-radius:5px 5px 0px 0px;"></div>
+                    </div>
+                    <div class="section col-lg-6">
+                        <div class="no-of-females" style="width:10px;height:{{dataPoint.females}}px;background:red;position:absolute;float:left;margin-left:5px;bottom:0px;border-radius:5px 5px 0px 0px;"  ></div>
+                    </div>
+            </div>
+
+            <div class="row">{{dataPoint.timeStamp}}</div>
+        </div>
+          
+    </div> 
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="col-lg-1" ng-show="ata{{dataPoint.datatime}}"  ng-repeat="dataPoint in dataObject.data">
+                        
+                        
+                        <div class="row"> {{dataPoint.music}}</div>
+                        <div class="row"> {{dataPoint.musicSrc}}</div>
+                        <div class="row"> {{dataPoint.vibe}}</div>
+                        <div class="row"> {{dataPoint.people}}</div>
+                        <div class="row"> {{dataPoint.females}}</div>
+                        
+                    </div>
+            </div>
+            
+                    <div class="col-lg-1"  ng-repeat="dataPoint in dataObject.data">
+                        <input type="button" ng-model="ata[dataPoint.datatime]" >
+                    </div>
+      </div>     
+
+
+      
+
+
+    </div>
+  </div>

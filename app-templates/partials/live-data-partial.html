@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-lg-5"><center> <button type="button" class="btn btn-default" ng-click="dataView = 'list'"> List View  </button></center></div>
+    <div class="col-lg-2"></center>|</center></div>
+    <div class="col-lg-5"><center> <button type="button" class="btn btn-default" ng-click="dataView = 'cards'">Card View</button> </center></div>
+    </div>
+
+<div class="row" ng-show="dataView == 'list'">
+ <label>Search: <input ng-model="searchText"></label>   
+<table class="table table-hover">
+    <tbody>
+       <tr>
+           <td ng-repeat="menuItem in menuDetails"> <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{menuItem.key}}<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li ng-repeat="item in menuItem.value"><button type="button" class="btn btn-link" ng-click="Filter(item)">{{item}}</button></li>
+    
+  </ul>
+</div></td>
+           
+           </tr> 
+
+            <tr ng-repeat="x in data | filter: searchText" >
+           <td>{{x.venueName}}</td>
+           <td>{{x.people}}</td>
+           <td>{{x.females}}</td>
+           <td>{{x.music}}</td>
+           <td>{{x.musicsource}}</td>
+           <td>{{x.vibe}}</td>
+           <td>{{x.fullness}}</td>
+           <td>{{x.time}}</td>
+           <td>{{x.date}}</td>
+           <td>{{x.image}}</td>
+           <td>{{x.Latitude}}<br>
+               {{x.Longitude}}</td>
+           </tr>
+           
+        </tbody>
+
+</table>        
+</div>
+
+<div class="row" ng-show="dataView =='cards'">
+  <div class"row">  
+ <label>Search: <input ng-model="searchVenue"></label>
+</div>
+    <div class="row">
+            <div class="col-lg-9">
+
+             <div ng-include="'app-templates/partials/venue-chart.html'"></div>
+
+                </div>
+            <div class="col-lg-3">        
+                <ul class="nav nav-pills nav-stacked">
+                     <li role="presentation" ng-repeat="x in list | filter: searchVenue"><a ng-href="" ng-click="displayVenue(x.displayName)">{{x.display_name}}</a></li>
+                 </ul>
+            </div>
+    </div>
+</div>
