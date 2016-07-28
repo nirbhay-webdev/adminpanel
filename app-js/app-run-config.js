@@ -19,6 +19,6 @@ app.config(['$locationProvider','$routeProvider',function($locationProvier,$rout
     .when('/',{
             templateUrl:'app/app-templates/login.html',
     })
-    .when('/dashboard',{templateUrl:'app/app-templates/dashboard.html'})
+    .when('/dashboard',{templateUrl:'app-templates/dashboard.html'})
     .otherwise('/');
 }]);
