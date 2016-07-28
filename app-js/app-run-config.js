@@ -17,7 +17,7 @@ app.run(['$location','dataService','$rootScope',function($location,dataService,$
 app.config(['$locationProvider','$routeProvider',function($locationProvier,$routeProvider){
     $routeProvider
     .when('/',{
-            templateUrl:'app/app-templates/login.html',
+            templateUrl:'app-templates/login.html',
     })
     .when('/dashboard',{templateUrl:'app-templates/dashboard.html'})
     .otherwise('/');
